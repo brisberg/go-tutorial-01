@@ -23,8 +23,8 @@ func newDeck() deck {
 
 // (d deck) specifies the 'receiver' for the function
 func (d deck) print() {
-	for _, card := range d {
-		fmt.Println(1, card)
+	for i, card := range d {
+		fmt.Println(i, card)
 	}
 }
 
