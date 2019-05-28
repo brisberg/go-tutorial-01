@@ -13,4 +13,6 @@ func main() {
 	colors["white"] = "#ffffff"
 
 	fmt.Println(colors)
+
+	delete(colors, "white") // delete this key value
 }
