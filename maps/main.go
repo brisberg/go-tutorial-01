@@ -9,7 +9,9 @@ func main() {
 		"white": "#ffffff",
 	}
 
-	fmt.Println(colors)
+	colors["yellow"] = "#00fffff"
+	delete(colors, "yellow")
+
 	printMap(colors)
 }
 
