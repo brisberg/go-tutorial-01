@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 type triangle struct {
-	base   int
-	height int
+	base   float64
+	height float64
 }
 
 type square struct {
-	sideLength int
+	sideLength float64
 }
 
 type shape interface {
@@ -30,11 +30,11 @@ func main() {
 }
 
 func (t triangle) getArea() float64 {
-	return 0.5 * float64(t.base*t.height)
+	return 0.5 * t.base * t.height
 }
 
 func (s square) getArea() float64 {
-	return float64(s.sideLength * s.sideLength)
+	return s.sideLength * s.sideLength
 }
 
 func printArea(s shape) float64 {
