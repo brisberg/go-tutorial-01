@@ -7,6 +7,8 @@ import (
 	"os"
 )
 
+type logWriter struct{}
+
 func main() {
 	resp, err := http.Get("http://google.com")
 	if err != nil {
@@ -14,10 +16,11 @@ func main() {
 		os.Exit(1)
 	}
 
-	// bs := make([]byte, 99999)
-	// resp.Body.Read(bs)
+	lw := logWriter{}
 
-	// fmt.Println(string(bs))
+	io.Copy(lw, resp.Body)
+}
 
-	io.Copy(os.Stdout, resp.Body)
+func (logWriter) Write(p []byte) (n int, err error) {
+	return 1, nil
 }
