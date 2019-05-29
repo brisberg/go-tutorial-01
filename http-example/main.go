@@ -22,5 +22,7 @@ func main() {
 }
 
 func (logWriter) Write(p []byte) (n int, err error) {
-	return 1, nil
+	fmt.Println(p)
+
+	return len(p), nil
 }
